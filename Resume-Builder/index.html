@@ -14,6 +14,8 @@
         <!-- Left Side Form -->
         <div class="form-section">
             <h2>Resume Builder</h2>
+            <label>Profile Photo</label>
+            <input type="file" id="photoInput" accept="image/*">
 
             <label>Full Name</label>
             <input type="text" id="nameInput">
@@ -23,6 +25,14 @@
 
             <label>Phone</label>
             <input type="text" id="phoneInput">
+            <label>GitHub</label>
+<input type="text" id="githubInput" placeholder="github.com/swasthinayak">
+
+<label>LinkedIn</label>
+<input type="text" id="linkedinInput" placeholder="linkedin.com/in/swasthi">
+
+<label>Portfolio</label>
+<input type="text" id="portfolioInput" placeholder="yourportfolio.com">
 
             <label>Professional Title</label>
             <input type="text" id="titleInput">
@@ -46,7 +56,7 @@
 
         <!-- Right Side Preview -->
         <div class="preview-section">
-
+<img id="previewPhoto" src="" alt="Profile Photo">
             <h1 id="previewName">Your Name</h1>
 
             <h3 id="previewTitle">
@@ -60,6 +70,26 @@
             <p id="previewPhone">
                 9876543210
             </p>
+            <p>
+    GitHub:
+    <a id="previewGithub" href="#" target="_blank">
+    github.com/username
+</a>
+</p>
+
+<p>
+    LinkedIn:
+    <a id="previewLinkedin" href="#" target="_blank">
+    linkedin.com/in/username
+</a>
+</p>
+
+<p>
+    Portfolio:
+    <a id="previewPortfolio" href="#" target="_blank">
+        yourportfolio.com
+    </a>
+</p>
 
             <hr>
             <hr>
@@ -76,9 +106,9 @@ CRUD application using MongoDB and JavaScript
 
             <h2>Skills</h2>
 
-            <p id="previewSkills">
-                HTML, CSS, JavaScript
-            </p>
+           <div id="previewSkills">
+
+           </div>
             <hr>
 
 <h2>Education</h2>

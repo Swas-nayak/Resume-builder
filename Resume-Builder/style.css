@@ -40,3 +40,19 @@ textarea{
 h2{
     margin-bottom:15px;
 }
+#previewPhoto{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin-bottom:15px;
+}
+.skill-tag{
+    display:inline-block;
+    padding:6px 12px;
+    margin:4px;
+    background:#e8f0fe;
+    border-radius:20px;
+    font-size:14px;
+}

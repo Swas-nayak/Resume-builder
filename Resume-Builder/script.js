@@ -25,9 +25,33 @@ titleInput.addEventListener("input", () => {
 });
 
 skillsInput.addEventListener("input", () => {
-    document.getElementById("previewSkills").textContent =
-        skillsInput.value || "HTML, CSS, JavaScript";
+
+    const skills = skillsInput.value.split(",");
+
+    let output = "";
+
+    skills.forEach(skill => {
+
+        if(skill.trim() !== ""){
+
+            output += `
+                <span class="skill-tag">
+                    ${skill.trim()}
+                </span>
+            `;
+        }
+    });
+
+    document.getElementById("previewSkills").innerHTML = output;
 });
+const githubInput =
+document.getElementById("githubInput");
+
+const linkedinInput =
+document.getElementById("linkedinInput");
+
+const portfolioInput =
+document.getElementById("portfolioInput");
 const collegeInput = document.getElementById("collegeInput");
 const degreeInput = document.getElementById("degreeInput");
 const yearInput = document.getElementById("yearInput");
@@ -60,4 +84,50 @@ projectNameInput.addEventListener("input", () => {
 projectDescInput.addEventListener("input", () => {
     document.getElementById("previewProjectDesc").textContent =
     projectDescInput.value || "Project Description";
+});
+const photoInput = document.getElementById("photoInput");
+
+photoInput.addEventListener("change", () => {
+
+    const file = photoInput.files[0];
+
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+            document.getElementById("previewPhoto").src =
+            e.target.result;
+        }
+
+        reader.readAsDataURL(file);
+    }
+});
+githubInput.addEventListener("input", () => {
+
+    const github =
+    document.getElementById("previewGithub");
+
+    github.textContent =
+    githubInput.value || "github.com/username";
+
+    github.href =
+    "https://" + githubInput.value;
+});
+
+linkedinInput.addEventListener("input", () => {
+    const linkedin =
+    document.getElementById("previewLinkedin");
+    linkedin.textContent =
+    linkedinInput.value || "linkedin.com/in/username";
+    linkedin.href =
+    "https://" + linkedinInput.value;
+});
+portfolioInput.addEventListener("input", () => {
+    const portfolio =
+    document.getElementById("previewPortfolio");
+    portfolio.textContent =
+    portfolioInput.value || "yourportfolio.com";
+    portfolio.href =
+    "https://" + portfolioInput.value;
 });
