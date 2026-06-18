@@ -131,3 +131,38 @@ portfolioInput.addEventListener("input", () => {
     portfolio.href =
     "https://" + portfolioInput.value;
 });
+const downloadBtn =
+document.getElementById("downloadBtn");
+
+downloadBtn.addEventListener("click", () => {
+
+    const resume =
+    document.getElementById("resume");
+
+    const options = {
+
+        margin: 0.5,
+
+        filename: "Resume.pdf",
+
+        image: {
+            type: "jpeg",
+            quality: 1
+        },
+
+        html2canvas: {
+            scale: 2
+        },
+
+        jsPDF: {
+            unit: "in",
+            format: "a4",
+            orientation: "portrait"
+        }
+    };
+
+    html2pdf()
+        .set(options)
+        .from(resume)
+        .save();
+});
