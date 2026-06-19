@@ -282,3 +282,38 @@ if(savedPhoto){
         savedPhoto;
 }
 };
+const templateSelect =
+document.getElementById("templateSelect");
+
+const resume =
+document.getElementById("resume");
+
+templateSelect.addEventListener("change", () => {
+
+    resume.classList.remove(
+        "classic",
+        "modern",
+        "minimal"
+    );
+
+    resume.classList.add(
+        templateSelect.value
+    );
+
+    localStorage.setItem(
+        "template",
+        templateSelect.value
+    );
+});
+const savedTemplate =
+localStorage.getItem("template");
+
+if(savedTemplate){
+
+    templateSelect.value =
+    savedTemplate;
+
+    resume.classList.add(
+        savedTemplate
+    );
+}
