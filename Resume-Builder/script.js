@@ -217,3 +217,52 @@ function saveData() {
         JSON.stringify(data)
     );
 }
+window.onload = () => {
+
+    const savedData = JSON.parse(
+        localStorage.getItem("resumeData")
+    );
+
+    if(savedData){
+
+        nameInput.value = savedData.name || "";
+        emailInput.value = savedData.email || "";
+        phoneInput.value = savedData.phone || "";
+        titleInput.value = savedData.title || "";
+        skillsInput.value = savedData.skills || "";
+
+        collegeInput.value = savedData.college || "";
+        degreeInput.value = savedData.degree || "";
+        yearInput.value = savedData.year || "";
+
+        projectNameInput.value =
+            savedData.projectName || "";
+
+        projectDescInput.value =
+            savedData.projectDesc || "";
+
+        githubInput.value =
+            savedData.github || "";
+
+        linkedinInput.value =
+            savedData.linkedin || "";
+
+        portfolioInput.value =
+            savedData.portfolio || "";
+
+        // Refresh preview
+        nameInput.dispatchEvent(new Event("input"));
+        emailInput.dispatchEvent(new Event("input"));
+        phoneInput.dispatchEvent(new Event("input"));
+        titleInput.dispatchEvent(new Event("input"));
+        skillsInput.dispatchEvent(new Event("input"));
+        collegeInput.dispatchEvent(new Event("input"));
+        degreeInput.dispatchEvent(new Event("input"));
+        yearInput.dispatchEvent(new Event("input"));
+        projectNameInput.dispatchEvent(new Event("input"));
+        projectDescInput.dispatchEvent(new Event("input"));
+        githubInput.dispatchEvent(new Event("input"));
+        linkedinInput.dispatchEvent(new Event("input"));
+        portfolioInput.dispatchEvent(new Event("input"));
+    }
+};
