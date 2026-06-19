@@ -40,14 +40,6 @@ textarea{
 h2{
     margin-bottom:15px;
 }
-#previewPhoto{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    display:block;
-    margin-bottom:15px;
-}
 .skill-tag{
     display:inline-block;
     padding:6px 12px;
@@ -68,38 +60,67 @@ button{
 #downloadBtn{
     margin-top:15px;
 }
-.classic{
-    background:white;
-    border:1px solid #ddd;
-    padding:30px;
-    font-family:"Times New Roman", serif;
+.classic .sidebar{
+    display:block;
+    width:100%;
+    background:none;
+    padding:0;
 }
 
-.classic h2{
-    border-bottom:2px solid black;
+.classic .main-content{
+    width:100%;
+}
+.classic{
+    display:block;
+}
+
+.modern .sidebar{
+    display:block;
+    width:30%;
+    padding:20px;
+    background:#f3f4f6;
+}
+
+.modern .main-content{
+    width:70%;
+    padding:20px;
+}
+
+.minimal .sidebar{
+    display:none;
 }
 
 .modern{
-    background:#f5f5f5;
-    border-left:8px solid #2563eb;
-    padding:30px;
-    font-family:Arial, sans-serif;
-}.modern h2{
-    color:#2563eb;
+    display:flex;
+    min-height:800px;
+    position:relative;
 }
 
-.minimal{
-    background:white;
-    padding:50px;
-    font-family:Arial, sans-serif;
-    box-shadow:none;
-    border:none;
+.modern #previewPhoto{
+    display:block;
+}
+
+.minimal .main-content{
+    width:100%;
 }
 
 .minimal h2{
     border:none;
-    margin-top:25px;
     text-transform:uppercase;
     letter-spacing:2px;
-    font-size:16px;
+}
+.sidebar{
+    display:none;
+}
+
+.main-content{
+    width:100%;
+}
+#previewPhoto{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 15px;
 }
