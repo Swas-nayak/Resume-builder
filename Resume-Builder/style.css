@@ -68,3 +68,16 @@ button{
 #downloadBtn{
     margin-top:15px;
 }
+.classic{
+    background:white;
+}
+
+.modern{
+    background:#f5f5f5;
+    border-left:8px solid #333;
+}
+
+.minimal{
+    background:white;
+    font-family:Georgia, serif;
+}
