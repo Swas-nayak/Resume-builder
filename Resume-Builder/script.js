@@ -116,13 +116,21 @@ photoInput.addEventListener("change", () => {
         const reader = new FileReader();
 
         reader.onload = function(e){
+
+            const imageData = e.target.result;
+
             document.getElementById("previewPhoto").src =
-            e.target.result;
-        }
+                imageData;
+
+            localStorage.setItem(
+                "profilePhoto",
+                imageData
+            );
+
+        };
 
         reader.readAsDataURL(file);
     }
-    saveData();
 });
 githubInput.addEventListener("input", () => {
 
@@ -265,4 +273,12 @@ window.onload = () => {
         linkedinInput.dispatchEvent(new Event("input"));
         portfolioInput.dispatchEvent(new Event("input"));
     }
+    const savedPhoto =
+    localStorage.getItem("profilePhoto");
+
+if(savedPhoto){
+
+    document.getElementById("previewPhoto").src =
+        savedPhoto;
+}
 };
